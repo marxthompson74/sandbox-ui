@@ -1,30 +1,64 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" class="logo">
-  <MessageDisplay msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <nav>
+      <div class="nav-left">
+        <router-link to="/">Home</router-link>
+        <router-link to="/chat">Chat</router-link>
+      </div>
+      <div class="nav-right">
+        <LogoDisplay />
+      </div>
+    </nav>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import MessageDisplay from './components/MessageDisplay.vue'
+import LogoDisplay from '@/components/LogoDisplay.vue';
 
 export default {
-  name: 'App',
   components: {
-    MessageDisplay 
-  }
-}
+    LogoDisplay,
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-  .logo {
-    width: 20%;
-    height: auto; /* Maintain aspect ratio */
-  }
+  background-image: url('./assets/background.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.nav-left {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-right {
+  margin-left: auto; /* Pushes the logo to the furthest right */
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 </style>
+
+
