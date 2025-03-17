@@ -1,29 +1,20 @@
 <template>
-  <div class="home-display bg-gray-100 min-h-screen p-8">
-    <!-- Title -->
-    <h2 class="text-3xl font-bold text-center mb-6">Our Services</h2>
-
-    <!-- Hero Image -->
-    <div class="relative flex justify-center mb-10">
-      <img src="@/assets/hero-image.jpg" alt="Hero Image" class="rounded-lg shadow-lg w-full max-w-4xl" />
+  <div class="home-container">
+    <!-- Hero Section -->
+    <div class="hero-container">
+      <h2 class="title">Our Services</h2>
+      <img src="@/assets/hero-image.jpg" alt="Hero Image" class="hero-image" />
     </div>
 
     <!-- Services Section -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-      <div v-for="service in services" :key="service.title" class="service-card p-6 bg-white rounded-lg shadow-lg text-center">
-        <!-- Icon -->
-        <div class="icon bg-black text-white p-4 rounded-full inline-block mb-4">
-          <font-awesome-icon :icon="service.icon" size="2x" />
+    <div class="services-grid">
+      <div v-for="service in services" :key="service.title" class="service-card">
+        <div class="icon-container">
+          <img :src="service.icon" alt="Service Icon" class="service-icon" />
         </div>
-        
-        <!-- Title -->
-        <h3 class="text-lg font-bold">{{ service.title }}</h3>
-
-        <!-- Description -->
-        <p class="text-gray-600 text-sm my-2">{{ service.description }}</p>
-
-        <!-- More Button -->
-        <button class="text-black font-bold mt-2">MORE</button>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+        <button class="more-button">MORE</button>
       </div>
     </div>
   </div>
@@ -37,17 +28,17 @@ export default {
         {
           title: "Mobile Development",
           description: "Sample text. Click to select the text box...",
-          icon: "fa-solid fa-code",
+          icon: require('@/assets/image.png'), // Replace with actual image
         },
         {
           title: "Mobility Services",
           description: "Sample text. Click to select the text box...",
-          icon: "fa-solid fa-car",
+          icon: require('@/assets/image.png'), // Replace with actual image
         },
         {
           title: "Software Consulting",
           description: "Sample text. Click to select the text box...",
-          icon: "fa-solid fa-laptop",
+          icon: require('@/assets/image.png'), // Replace with actual image
         },
       ],
     };
@@ -56,13 +47,112 @@ export default {
 </script>
 
 <style scoped>
-.service-card:hover {
-  transform: scale(1.05);
+/* General Styling */
+.home-container {
+  color: white;
+  font-family: Arial, sans-serif;
+  background-color: rgba(255, 255, 255, 0.3); /* White with 70% transparency */
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Container for the hero section */
+.hero-container {
+  position: relative; /* Enables positioning for child elements */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px; /* Adds spacing below the hero image */
+}
+
+/* Title Styling - Positioned on top of the image */
+
+/* Title Styling - Positioned on top of the image */
+.title {
+  position: absolute;
+  top: 10px; /* Aligns it at the top of the image */
+  left: 50%;
+  transform: translateX(-50%); /* Centers it horizontally */
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: white; /* White text for contrast */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* Adds a shadow to improve readability */
+}
+
+
+/* Hero Image */
+.hero-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Service Card */
+.service-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
   transition: transform 0.3s ease-in-out;
 }
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Icon */
+.icon-container {
+  background: black;
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.service-icon {
+  width: 40px;
+  height: 40px;
+}
+
+/* Service Title */
+.service-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Service Description */
+.service-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* More Button */
+.more-button {
+  background: none;
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.more-button:hover {
+  text-decoration: underline;
+}
 </style>
-
-
-
-
 
