@@ -25,7 +25,7 @@ export default {
 
 <style>
 #app {
-  background-image: url('./assets/background.jpg'); /* Replace with your image path */
+  background-image: url('./assets/background.webp'); /* Replace with your image path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

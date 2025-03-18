@@ -1,11 +1,9 @@
 <template>
   <div class="home-container">
-    <!-- Hero Section -->
-    <div class="hero-container">
+    <!-- Title Section -->
+    <div >
       <h2 class="title">Our Services</h2>
-      <img src="@/assets/hero-image.jpg" alt="Hero Image" class="hero-image" />
     </div>
-
     <!-- Services Section -->
     <div class="services-grid">
       <div v-for="service in services" :key="service.title" class="service-card">
@@ -26,19 +24,19 @@ export default {
     return {
       services: [
         {
-          title: "Mobile Development",
+          title: "Massage Therapy",
           description: "Sample text. Click to select the text box...",
-          icon: require('@/assets/image.png'), // Replace with actual image
+          icon: require('@/assets/image-1.jpg'), // Replace with actual image
         },
         {
-          title: "Mobility Services",
+          title: "Yoga",
           description: "Sample text. Click to select the text box...",
-          icon: require('@/assets/image.png'), // Replace with actual image
+          icon: require('@/assets/image-2.jpg'), // Replace with actual image
         },
         {
-          title: "Software Consulting",
+          title: "Facials",
           description: "Sample text. Click to select the text box...",
-          icon: require('@/assets/image.png'), // Replace with actual image
+          icon: require('@/assets/image-3.jpg'), // Replace with actual image
         },
       ],
     };
@@ -51,22 +49,11 @@ export default {
 .home-container {
   color: white;
   font-family: Arial, sans-serif;
-  background-color: rgba(255, 255, 255, 0.3); /* White with 70% transparency */
+  background-color: rgba(255, 255, 255, 0.0);
   min-height: 100vh;
   padding: 40px 20px;
   text-align: center;
 }
-
-/* Container for the hero section */
-.hero-container {
-  position: relative; /* Enables positioning for child elements */
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-bottom: 30px; /* Adds spacing below the hero image */
-}
-
-/* Title Styling - Positioned on top of the image */
 
 /* Title Styling - Positioned on top of the image */
 .title {
@@ -82,14 +69,6 @@ export default {
 }
 
 
-/* Hero Image */
-.hero-image {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
 /* Services Grid */
 .services-grid {
   display: grid;
@@ -102,6 +81,7 @@ export default {
 /* Service Card */
 .service-card {
   background: white;
+  color: black; /* White text for contrast */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -115,7 +95,7 @@ export default {
 
 /* Icon */
 .icon-container {
-  background: black;
+  background: transparent;
   padding: 10px;
   border-radius: 50%;
   display: inline-block;
@@ -123,8 +103,8 @@ export default {
 }
 
 .service-icon {
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  height: 100%;
 }
 
 /* Service Title */
