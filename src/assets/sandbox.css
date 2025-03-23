@@ -1,0 +1,131 @@
+#app {
+  background-image: url('./background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.nav-left {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-right {
+  margin-left: auto; /* Pushes the logo to the furthest right */
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9); /* Adds a shadow to improve readability */
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  height: 100px; /* Adjust size as needed */
+}
+
+.home-container {
+  color: white;
+  font-family: Arial, sans-serif;
+  background-color: rgba(255, 255, 255, 0.0);
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Title Styling - Positioned on top of the image */
+.title {
+  position: absolute;
+  top: 10px; /* Aligns it at the top of the image */
+  left: 50%;
+  transform: translateX(-50%); /* Centers it horizontally */
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: white; /* White text for contrast */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* Adds a shadow to improve readability */
+}
+
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Service Card */
+.service-card {
+  background: white;
+  color: black; /* White text for contrast */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Icon */
+.icon-container {
+  background: transparent;
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.service-icon {
+  width: 100%;
+  height: 100%;
+}
+
+/* Service Title */
+.service-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Service Description */
+.service-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* More Button */
+.more-button {
+  background: none;
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.more-button:hover {
+  text-decoration: underline;
+}
+
+

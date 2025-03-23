@@ -2,20 +2,20 @@
   <div class="home-container">
     <!-- Title Section -->
     <div >
-      <h2 class="title">Contact Us</h2>
+      <h2 class="title">Admin</h2>
     </div>
     <!-- Services Section -->
     <div class="services-grid">
-      <MessageComponent/>
+      <BigDataComponent/>
     </div>
   </div>
 </template>
 
 <script>
-import MessageComponent from '@/components/MessageComponent.vue';
+import BigDataComponent from '@/components/BigDataComponent.vue';
 export default {
   components: {
-    MessageComponent,
+    BigDataComponent,
   },
 };
 </script>
